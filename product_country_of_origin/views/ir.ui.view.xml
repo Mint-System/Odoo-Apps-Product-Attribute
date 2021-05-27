@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+  <record id="product_template_only_form_view" model="ir.ui.view">
+    <field name="active" eval="True"/>
+    <field name="arch" type="xml">
+      <data>
+        <xpath expr="//field[@name='uom_po_id']" position="after">
+          <field name="ountry_of_origin"/>
+        </xpath>
+      </data>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="key" eval="False"/>
+    <field name="mode">extension</field>
+    <field name="model">product.template</field>
+    <field name="name">Mint System: product.template.product.form customization</field>
+    <field name="priority">99</field>
+    <field name="type">form</field>
+  </record>
+
+</odoo>
