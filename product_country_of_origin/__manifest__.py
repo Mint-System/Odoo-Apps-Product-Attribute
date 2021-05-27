@@ -11,11 +11,11 @@
     'version': '14.0.1.0.0',
     'license': 'AGPL-3',
     
-    'depends': ['base'],
+    'depends': ['stock'],
 
     'data': [
-        'views/ir.ui.view.xml',
         'views/ir.model.fields.xml',
+        'views/ir.ui.view.xml',
     ],
 
     'installable': True,

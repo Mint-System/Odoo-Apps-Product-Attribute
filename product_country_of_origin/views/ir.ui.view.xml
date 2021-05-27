@@ -6,7 +6,7 @@
     <field name="arch" type="xml">
       <data>
         <xpath expr="//field[@name='uom_po_id']" position="after">
-          <field name="ountry_of_origin"/>
+          <field name="x_country_of_origin"/>
         </xpath>
       </data>
     </field>
