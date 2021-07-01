@@ -2,11 +2,11 @@
     :target: http://www.gnu.org/licenses/gpl-3.0-standalone.html
     :alt: License: GPL-3
 
-=========================
-Product Country of Origin
-=========================
+=====================
+Product Name Sequence
+=====================
 
-Add field country of origin to the logistics tab.
+Generate product name from sequence.
 
 .. image:: ./static/description/icon.png
   :height: 100

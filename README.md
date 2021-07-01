@@ -15,3 +15,4 @@ git clone git@github.com:mint-system/odoo-apps-product-attribute.git ./addons/pr
 | Module                                                  | Summary                                           |
 | ------------------------------------------------------- | ------------------------------------------------- |
 | [product_country_of_origin](product_country_of_origin/) | Add field country of origin to the logistics tab. |
+| [product_name_sequence](product_name_sequence/)         | Generate product name from sequence.              |
