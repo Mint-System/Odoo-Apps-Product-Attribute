@@ -2,11 +2,11 @@
     :target: http://www.gnu.org/licenses/gpl-3.0-standalone.html
     :alt: License: GPL-3
 
-=====================
-Product Name Sequence
-=====================
+========================
+Product Type Description
+========================
 
-Generate product name from sequence.
+Add field type description to product.
 
 .. image:: ./static/description/icon.png
   :height: 100

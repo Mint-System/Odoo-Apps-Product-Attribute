@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from odoo import models, fields, api,_
 from odoo.exceptions import ValidationError
 
@@ -7,7 +5,7 @@ class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
     # Set default name to New
-    name = fields.Char('Name', index=True, required=True, translate=True, default=lambda self: _('New'))
+    name = fields.Char(index=True, required=True, translate=True, default=lambda self: _('New'))
 
     _sql_constraints = [
         ('name_unique', 'unique (name)', "Product with the same name already exists."),

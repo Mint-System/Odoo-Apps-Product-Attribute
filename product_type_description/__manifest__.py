@@ -1,20 +1,20 @@
 {
-    'name': "Product Name Sequence",
+    'name': "Product Type Description",
 
     'summary': """
-        Generate product name from sequence.
+        Add field type description to product.
     """,
-
+    
     'author': 'Mint System GmbH, Odoo Community Association (OCA)',
-    'website': "https://www.mint-system.ch",
+    'website': 'https://www.mint-system.ch',
     'category': 'Manufacturing',
     'version': '14.0.1.0.0',
     'license': 'AGPL-3',
-
-    'depends': ['product'],
+    
+    'depends': ['stock'],
 
     'data': [
-        'data/ir_sequence_data.xml',
+        'views/product_template.xml',
     ],
 
     'installable': True,
