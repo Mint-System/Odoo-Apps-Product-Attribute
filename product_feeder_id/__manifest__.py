@@ -19,4 +19,5 @@
 
     'installable': True,
     'application': False,
+    "images": ["images/screen.png"],
 }
