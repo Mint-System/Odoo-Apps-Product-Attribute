@@ -6,7 +6,7 @@
         <field name="model">product.packaging</field>
         <field name="inherit_id" ref="product.product_packaging_tree_view" />
         <field name="arch" type="xml">
-            <field name="qty" position="after">
+            <field name="name" position="after">
                 <field name="parent_packaging" />
             </field>
         </field>
