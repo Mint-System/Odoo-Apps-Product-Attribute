@@ -22,13 +22,21 @@
         <field name="inherit_id" ref="product.product_pricelist_view" />
         <field name="arch" type="xml">
 
-            <field name="date_start" position="before">
+            <xpath expr="//tree[1]/field[@name='date_start']" position="before">
                 <field name="price_discount" />
-            </field>
+            </xpath>
 
-            <xpath expr="//tree/field[1]" position="before">
+            <xpath expr="//tree[2]/field[@name='date_start']" position="before">
+                <field name="price_discount" />
+            </xpath>
+
+            <xpath expr="//tree[1]/field[1]" position="before">
                 <field name="sequence" widget="handle"/>
-            </xpath>           
+            </xpath>
+
+            <xpath expr="//tree[2]/field[1]" position="before">
+                <field name="sequence" widget="handle"/>
+            </xpath>
 
         </field>
     </record>
