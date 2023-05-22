@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="product.product_packaging_tree_view" />
         <field name="arch" type="xml">
             <field name="name" position="after">
-                <field name="parent_packaging" />
+                <field name="parent_packaging"/>
             </field>
         </field>
     </record>
@@ -19,7 +19,7 @@
         <field name="arch" type="xml">
             <h1 position="after">
                 <group>
-                    <field name="parent_packaging" domain="[('product_id', '=', product_id)]" />
+                    <field name="parent_packaging" domain="[('product_id', '=', product_id)]" context="{'form_view_ref': 'product.product_packaging_form_view'}"/>
                 </group>
             </h1>
         </field>
