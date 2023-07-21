@@ -1,5 +1,5 @@
 {
-    "name": "Product Dimension",
+    "name": "Product Dimension Attributes",
     "summary": """
         Product dimension attributes.
     """,
