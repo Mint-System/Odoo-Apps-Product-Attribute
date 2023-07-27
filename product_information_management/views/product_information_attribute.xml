@@ -6,8 +6,8 @@
         <field name="model">product.information.attribute</field>
         <field name="arch" type="xml">
             <tree editable="bottom">
-                <field name="key" />
-                <field name="attribute_type" attrs="{'readonly': [('value_id','!=',False)]}" />
+                <field name="key_id" />
+                <field name="attribute_type" />
                 <field name="value_id" context="{'default_attribute_type': attribute_type}" />
             </tree>
         </field>
@@ -20,7 +20,7 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="key" />
+                        <field name="key_id" />
                         <field name="attribute_type" />
                         <field name="value_id" context="{'default_attribute_type': attribute_type}" />
                     </group>
@@ -53,16 +53,16 @@
         <field name="model">product.information.attribute</field>
         <field name="arch" type="xml">
             <search string="Search Product Informations">
-                <field name="key"
+                <field name="key_id"
                     string="Key and Value"
-                    filter_domain="['|',('key', 'ilike', self),('value_id', 'ilike', self)]" />
+                    filter_domain="['|',('key_id', 'ilike', self),('value_id', 'ilike', self)]" />
                 <field name="value_id" />
             </search>
         </field>
     </record>
 
     <record id="action_product_information_attribute_tree" model="ir.actions.act_window">
-        <field name="name">Product Inforamtions</field>
+        <field name="name">Product Informations</field>
         <field name="res_model">product.information.attribute</field>
         <field name="binding_view_types">tree</field>
         <field name="view_mode">tree</field>

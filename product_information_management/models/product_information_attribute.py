@@ -1,14 +1,15 @@
-import logging
+import logging, ast
 from odoo import fields, models, api, _
 _logger = logging.getLogger(__name__)
+from odoo.exceptions import UserError
 
 
 class ProductInformationAttribute(models.Model):
     _name = 'product.information.attribute'
     _description = 'Product Information Attribute'
-    _rec = 'key'
+    _rec = 'key_id'
 
-    key = fields.Char(required=True)
+    key_id = fields.Many2one('product.information.key', required=True)
     attribute_type = fields.Selection([
         ('char', 'Char'),
         ('text', 'Text'),
@@ -16,8 +17,18 @@ class ProductInformationAttribute(models.Model):
         ('float', 'Float'),
         ('boolean', 'Boolean'),
     ], default='char', required=True)
-    value_id = fields.Many2one('product.information.value', required=True, domain="[('attribute_type', '=', attribute_type)]")
+    value_id = fields.Many2one('product.information.value', domain="[('attribute_type', '=', attribute_type)]")
     
+    @api.onchange('attribute_type')
+    def _onchange_attribute_type(self):
+        if self.value_id:
+            # raise UserError(_('Remove value before changing the attribute type.'))
+            warning = {
+                'title': _('Warning'),
+                'message': _('Remove value before changing the attribute type.')
+            }
+            return {'warning': warning}
+
     def get_value(self):
         options = {
             'char': self.value_id.char_value,
@@ -27,6 +38,20 @@ class ProductInformationAttribute(models.Model):
             'boolean': self.value_id.boolean_value,
         }
         return options[self.attribute_type]
+
+    _sql_constraints = [
+        ('key_value_unique', 'unique(key_id,valude_id)', "Key and value combination must be unique.")
+    ]
+
+class ProductInformationKey(models.Model):
+    _name = 'product.information.key'
+    _description = 'Product Information Key'
+
+    name = fields.Char('Key', store=True)
+
+    _sql_constraints = [
+        ('name_unique', 'unique(name)', "Key must be unique.")
+    ]
 
 class ProductInformationValue(models.Model):
     _name = 'product.information.value'
@@ -66,4 +91,4 @@ class ProductInformationValue(models.Model):
             if attribute_type == 'float':
                 value.write({'float_value': float(self.name) })
             if attribute_type == 'boolean':
-                value.write({'boolean_value': bool(self.name) })
+                value.write({'boolean_value': ast.literal_eval(self.name) })

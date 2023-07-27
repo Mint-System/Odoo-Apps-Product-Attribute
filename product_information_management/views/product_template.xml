@@ -9,8 +9,8 @@
                 <group>
                     <field name="attribute_ids">
                         <tree editable="bottom">
-                            <field name="key" />
-                            <field name="attribute_type" attrs="{'readonly': [('value_id','!=',False)]}" />
+                            <field name="key_id" />
+                            <field name="attribute_type" />
                             <field name="value_id" />
                         </tree>
                     </field>
