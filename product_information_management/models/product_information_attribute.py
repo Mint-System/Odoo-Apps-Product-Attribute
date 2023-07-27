@@ -29,16 +29,6 @@ class ProductInformationAttribute(models.Model):
             }
             return {'warning': warning}
 
-    def get_value(self):
-        options = {
-            'char': self.value_id.char_value,
-            'text': self.value_id.text_value,
-            'integer': self.value_id.integer_value,
-            'float': self.value_id.float_value,
-            'boolean': self.value_id.boolean_value,
-        }
-        return options[self.attribute_type]
-
     _sql_constraints = [
         ('key_value_unique', 'unique(key_id,valude_id)', "Key and value combination must be unique.")
     ]
