@@ -8,7 +8,7 @@
     "category": "Inventory",
     "version": "16.0.1.1.1",
     "license": "AGPL-3",
-    "depends": ["product","sale"],
+    "depends": ["product", "sale"],
     "data": [
         "security/ir.model.access.csv",
         "views/product_template.xml",

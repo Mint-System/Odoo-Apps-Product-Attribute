@@ -15,15 +15,6 @@ For a detailed documentation have a look at https://www.odoo-wiki.org/product-in
   :width: 100
   :alt: Icon
 
-Usage
-~~~~~
-
-Clone module into Odoo addon directory.
-
-.. code-block:: bash
-
-    git clone git@github.com:mint-system/odoo-app-product-information-management.git ./addons/product_information_management
-
 Configuration
 ~~~~~~~~~~~~~
 
