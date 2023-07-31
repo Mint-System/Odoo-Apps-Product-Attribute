@@ -47,9 +47,9 @@ class ProductInformationValue(models.Model):
     _name = 'product.information.value'
     _description = 'Product Information Value'
 
-    name = fields.Char('Value', compute='_compute_get_name', inverse='_inverse_set_name', store=True)
+    name = fields.Char('Value', compute='_compute_get_name', inverse='_inverse_set_name')
     attribute_ids = fields.One2many('product.information.attribute', 'value_id', required=True)
-    attribute_type = fields.Char()
+    attribute_type = fields.Char(required=True)
 
     char_value = fields.Char(readonly=True)
     text_value = fields.Text(readonly=True)
@@ -63,10 +63,10 @@ class ProductInformationValue(models.Model):
                 'char': value.char_value,
                 'text': value.text_value,
                 'integer': str(value.integer_value),
-                'float': float(value.float_value),
-                'boolean': bool(value.boolean_value),
+                'float': str(value.float_value),
+                'boolean': str(value.boolean_value),
             }
-            value.name = options[value.attribute_id.attribute_type] if value.attribute_id else 'None'
+            value.name = options[value.attribute_type]
 
     @api.depends('char_value', 'text_value', 'integer_value')
     def _inverse_set_name(self):
