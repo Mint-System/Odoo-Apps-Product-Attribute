@@ -57,6 +57,9 @@
                     string="Key and Value"
                     filter_domain="['|',('key_id', 'ilike', self),('value_id', 'ilike', self)]" />
                 <field name="value_id" />
+                <group expand="0" string="Group By">
+                    <filter string="Key" name="key_id" context="{'group_by': 'key_id'}" />
+                </group>
             </search>
         </field>
     </record>

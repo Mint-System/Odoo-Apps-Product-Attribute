@@ -6,20 +6,20 @@ _logger = logging.getLogger(__name__)
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    attribute_ids = fields.Many2many('product.information.attribute', string='Product Information')
+    attribute_ids = fields.Many2many('product.information.attribute', string='Product Information', compute='_compute_attribute_ids', inverse='_set_attribute_ids', store=True)
 
-    def get_value_by_key(self, key):
-        self.ensure_one()
-        
-        attribute = self.attribute_ids.filtered(lambda a: a.key_id.name == key)[:1]
-        if attribute:
-            options = {
-                'char': attribute.value_id.char_value,
-                'text': attribute.value_id.text_value,
-                'integer': attribute.value_id.integer_value,
-                'float': attribute.value_id.float_value,
-                'boolean': attribute.value_id.boolean_value,
-            }
-            return options[attribute.attribute_type]
-        else:
-            return None
+    @api.depends('product_variant_ids', 'product_variant_ids.attribute_ids')
+    def _compute_attribute_ids(self):
+        unique_variants = self.filtered(lambda template: len(template.product_variant_ids) == 1)
+        for template in unique_variants:
+            template.attribute_ids = template.product_variant_ids.attribute_ids
+        for template in (self - unique_variants):
+            template.attribute_ids = []
+
+    def _set_attribute_ids(self):
+        for template in self:
+            if len(template.product_variant_ids) == 1:
+                template.product_variant_ids.attribute_ids = template.attribute_ids
+            else:
+                for product in template.product_variant_ids.filtered(lambda p: not p.attribute_ids):
+                    product.attribute_ids = template.attribute_ids
