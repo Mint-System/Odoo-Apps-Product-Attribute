@@ -30,24 +30,26 @@ class ProductInformationAttribute(models.Model):
             return {'warning': warning}
 
     _sql_constraints = [
-        ('key_value_unique', 'unique(key_id,valude_id)', "Key and value combination must be unique.")
+        ('key_value_unique', 'unique(key_id, value_id)', 'Key and value must be unique.')
     ]
 
 class ProductInformationKey(models.Model):
     _name = 'product.information.key'
     _description = 'Product Information Key'
+    _order = 'name'
 
     name = fields.Char('Key', store=True)
 
     _sql_constraints = [
-        ('name_unique', 'unique(name)', "Key must be unique.")
+        ('name_unique', 'unique(name)', 'Key must be unique.')
     ]
 
 class ProductInformationValue(models.Model):
     _name = 'product.information.value'
     _description = 'Product Information Value'
+    _order = 'name'
 
-    name = fields.Char('Value', compute='_compute_get_name', inverse='_inverse_set_name')
+    name = fields.Char('Value', compute='_compute_get_name', inverse='_inverse_set_name', store=True)
     attribute_ids = fields.One2many('product.information.attribute', 'value_id', required=True)
     attribute_type = fields.Char(required=True)
 
@@ -57,6 +59,11 @@ class ProductInformationValue(models.Model):
     float_value = fields.Float(readonly=True)
     boolean_value = fields.Boolean(readonly=True)
 
+    _sql_constraints = [
+        ('name_attribute_type_unique', 'unique(name, attribute_type)', 'Value and attribute type must be unique.')
+    ]
+
+    @api.depends('attribute_type')
     def _compute_get_name(self):
         for value in self:
             options = {
@@ -68,7 +75,7 @@ class ProductInformationValue(models.Model):
             }
             value.name = options[value.attribute_type]
 
-    @api.depends('char_value', 'text_value', 'integer_value')
+    @api.depends('name')
     def _inverse_set_name(self):
         for value in self:
             attribute_type = value.attribute_type # self._context['default_attribute_type']

@@ -37,6 +37,7 @@
                 <sheet>
                     <group>
                         <field name="name" />
+                        <field name="attribute_type" readonly="1" />
                         <field name="char_value" />
                         <field name="text_value" />
                         <field name="integer_value" />
