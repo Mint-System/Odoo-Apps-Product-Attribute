@@ -21,5 +21,5 @@ class ProductTemplate(models.Model):
             if len(template.product_variant_ids) == 1:
                 template.product_variant_ids.attribute_ids = template.attribute_ids
             else:
-                for product in template.product_variant_ids.filtered(lambda p: not p.attribute_ids):
-                    product.attribute_ids = template.attribute_ids
+                for product in template.product_variant_ids:
+                    product.attribute_ids = product.attribute_ids + template.attribute_ids
