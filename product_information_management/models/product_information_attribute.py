@@ -8,6 +8,7 @@ class ProductInformationAttribute(models.Model):
     _name = 'product.information.attribute'
     _description = 'Product Information Attribute'
     _rec = 'key_id'
+    _order = 'key_id, value_id'
 
     key_id = fields.Many2one('product.information.key', required=True)
     attribute_type = fields.Selection([
