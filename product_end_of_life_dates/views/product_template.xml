@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product_end_of_life_dates.product_template_form_view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <data>
+                <field name="detailed_type" position="after">
+                    <field name="end_of_support" />
+                    <field name="end_of_sale" />
+                    <field name="end_of_life" />
+                </field>
+            </data>
+        </field>
+    </record>
+
+    <!-- <record id="product_template_only_form_view" model="ir.ui.view">
+        <field name="name">product_end_of_life_dates.product_template_only_form_view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <data>
+                <field name="detailed_type" position="after">
+                    <field name="end_of_support" />
+                    <field name="end_of_sale" />
+                    <field name="end_of_life" />
+                </field>
+            </data>
+        </field>
+    </record> -->
+
+</odoo>
