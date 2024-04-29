@@ -9,3 +9,5 @@ class ProductTemplate(models.Model):
     end_of_support = fields.Date()
     end_of_sale = fields.Date()
     end_of_life = fields.Date()
+    end_of_life_announcement = fields.Date()
+    end_of_life_support = fields.Date()
