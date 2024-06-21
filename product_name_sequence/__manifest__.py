@@ -9,7 +9,9 @@
     "version": "15.0.1.0.0",
     "license": "AGPL-3",
     "depends": ["product"],
-    "data": ["data/ir_sequence_data.xml",],
+    "data": [
+        "data/ir_sequence_data.xml",
+    ],
     "installable": True,
     "application": False,
     "images": ["images/screen.png"],
