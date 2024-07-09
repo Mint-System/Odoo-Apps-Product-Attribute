@@ -10,11 +10,6 @@ Add field country of origin to the logistics tab.
 
 For a detailed documentation have a look at https://www.odoo-wiki.org/product-country-of-origin.html.
 
-.. image:: https://raw.githubusercontent.com/Mint-System/Wiki/master/assets/icon-box.png
-  :height: 100
-  :width: 100
-  :alt: Icon
-
 Configuration
 ~~~~~~~~~~~~~
 

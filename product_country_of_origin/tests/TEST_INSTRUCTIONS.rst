@@ -1,0 +1,3 @@
+- Open Inventory > Products > Products
+- Open the product Drawer
+- In the Inventory tab the Country of Origin can now be set
