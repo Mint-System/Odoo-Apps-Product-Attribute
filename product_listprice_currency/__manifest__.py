@@ -1,7 +1,7 @@
 {
     "name": "Product Listprice Currency",
     "summary": """
-        Set listprice in different currencies and use them pricelist formulas.
+        Set listprice in different currencies and use them in pricelist formulas.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",

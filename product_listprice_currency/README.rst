@@ -6,7 +6,7 @@
 Product Listprice Currency
 ==========================
 
-Set listprice in different currencies and use them pricelist formulas.
+Set listprice in different currencies and use them in pricelist formulas.
 
 For a detailed documentation have a look at https://www.odoo-wiki.org/product-listprice-currency.html
 
