@@ -1,0 +1,3 @@
+- Open Inventory > Products > Products
+- Open the product "Drawer"
+- In the General Information tab the Sales Price in USD and EUR can now be set
