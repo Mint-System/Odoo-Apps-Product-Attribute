@@ -8,8 +8,8 @@
         <field name="arch" type="xml">
             <data>
                 <field name="detailed_type" position="after">
-                    <field name="end_of_sale" />
                     <field name="end_of_life_announcement" />
+                    <field name="end_of_sale" />
                     <field name="end_of_life_support" />
                 </field>
             </data>
