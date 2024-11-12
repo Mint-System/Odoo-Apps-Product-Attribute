@@ -1,0 +1,3 @@
+- Open Inventory > Products > Products
+- Open the product "Drawer"
+- In the General Information tab the Secondary Type Description can now be set
