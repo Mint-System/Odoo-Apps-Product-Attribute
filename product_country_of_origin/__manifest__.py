@@ -8,7 +8,7 @@
     "category": "Manufacturing",
     "version": "17.0.1.0.0",
     "license": "AGPL-3",
-    "depends": ["delivery"],
+    "depends": ["stock_delivery"],
     "data": [
         "views/product_template.xml",
     ],
