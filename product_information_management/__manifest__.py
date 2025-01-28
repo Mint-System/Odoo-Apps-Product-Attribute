@@ -3,7 +3,7 @@
     "summary": """
         A simple key value model to store product informations.
     """,
-    "author": "Mint System GmbH, Odoo Community Association (OCA)",
+    "author": "Mint System GmbH",
     "website": "https://www.mint-system.ch",
     "category": "Inventory",
     "version": "16.0.1.3.1",
