@@ -8,3 +8,4 @@
 | [product_listprice_currency](product_listprice_currency) |         Set listprice in different currencies and use them in pricelist formulas. |
 | [product_type_description2](product_type_description2) |         Secondary type description field for products. |
 | [product_type_description](product_type_description) |         Add field type description to product. |
+| [product_variant_description](product_variant_description) |         Set sale, purchase and picking product description for each variant. |
