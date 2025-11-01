@@ -1,0 +1,19 @@
+[project]
+name = "odoo-apps-product-attribute"
+version = "16.0.20251101.0"
+dependencies = [
+    "odoo-addon-product_country_of_origin>=16.0dev,<16.1dev",
+    "odoo-addon-product_dimension_attributes>=16.0dev,<16.1dev",
+    "odoo-addon-product_feeder_id>=16.0dev,<16.1dev",
+    "odoo-addon-product_information_management>=16.0dev,<16.1dev",
+    "odoo-addon-product_listprice_currency>=16.0dev,<16.1dev",
+    "odoo-addon-product_material_attributes>=16.0dev,<16.1dev",
+    "odoo-addon-product_pricelist_fixed_discount>=16.0dev,<16.1dev",
+    "odoo-addon-product_type_description2>=16.0dev,<16.1dev",
+    "odoo-addon-product_type_description>=16.0dev,<16.1dev",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 16.0",
+]

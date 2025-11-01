@@ -18,9 +18,7 @@ class ProductTemplate(models.Model):
 
     @api.depends("product_variant_ids", "product_variant_ids.attribute_ids")
     def _compute_attribute_ids(self):
-        unique_variants = self.filtered(
-            lambda template: len(template.product_variant_ids) == 1
-        )
+        unique_variants = self.filtered(lambda template: len(template.product_variant_ids) == 1)
         for template in unique_variants:
             template.attribute_ids = template.product_variant_ids.attribute_ids
         for template in self - unique_variants:
@@ -32,6 +30,4 @@ class ProductTemplate(models.Model):
                 template.product_variant_ids.attribute_ids = template.attribute_ids
             else:
                 for product in template.product_variant_ids:
-                    product.attribute_ids = (
-                        product.attribute_ids + template.attribute_ids
-                    )
+                    product.attribute_ids = product.attribute_ids + template.attribute_ids

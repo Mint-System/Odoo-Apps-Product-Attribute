@@ -8,9 +8,7 @@ _logger = logging.getLogger(__name__)
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    attribute_ids = fields.Many2many(
-        "product.information.attribute", string="Product Information"
-    )
+    attribute_ids = fields.Many2many("product.information.attribute", string="Product Information")
 
     def get_value_by_key(self, key):
         self.ensure_one()

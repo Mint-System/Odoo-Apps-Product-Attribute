@@ -25,4 +25,4 @@ class ProductMaterial(models.Model):
         materials = self.search([("name", "=", name), ("percent", "=", percent)])
         if materials:
             return materials[0]
-        return super(ProductMaterial, self).create(vals)
+        return super().create(vals)

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="product_template_form_view_listprice_currency" model="ir.ui.view">
@@ -8,8 +8,8 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//div[@name='pricing']" position="after">
-                    <field name="list_price_eur"/>
-                    <field name="list_price_usd"/>
+                    <field name="list_price_eur" />
+                    <field name="list_price_usd" />
                 </xpath>
             </data>
         </field>

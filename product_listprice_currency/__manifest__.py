@@ -4,7 +4,7 @@
         Set listprice in different currencies and use them in pricelist formulas.
     """,
     "author": "Mint System GmbH",
-    "website": "https://www.mint-system.ch",
+    "website": "https://www.mint-system.ch/",
     "category": "Sale",
     "version": "16.0.1.0.0",
     "license": "AGPL-3",

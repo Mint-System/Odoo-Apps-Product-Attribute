@@ -1,14 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="product_pricelist_item_form_view" model="ir.ui.view">
-        <field name="name">product_pricelist_fixed_discount.product_pricelist_item_form_view</field>
+        <field
+            name="name"
+        >product_pricelist_fixed_discount.product_pricelist_item_form_view</field>
         <field name="model">product.pricelist.item</field>
         <field name="inherit_id" ref="product.product_pricelist_item_form_view" />
         <field name="arch" type="xml">
             <field name="fixed_price" position="after">
-                <label for="price_discount" attrs="{'invisible':[('compute_price', '!=', 'fixed')]}" />
-                <div class="o_row" attrs="{'invisible':[('compute_price', '!=', 'fixed')]}">
+                <label
+                    for="price_discount"
+                    attrs="{'invisible':[('compute_price', '!=', 'fixed')]}"
+                />
+                <div
+                    class="o_row"
+                    attrs="{'invisible':[('compute_price', '!=', 'fixed')]}"
+                >
                     <field name="price_discount" />
                     <span>%%</span>
                 </div>
@@ -17,7 +25,9 @@
     </record>
 
     <record id="product_pricelist_view" model="ir.ui.view">
-        <field name="name">product_pricelist_fixed_discount.product_pricelist_view</field>
+        <field
+            name="name"
+        >product_pricelist_fixed_discount.product_pricelist_view</field>
         <field name="model">product.pricelist</field>
         <field name="inherit_id" ref="product.product_pricelist_view" />
         <field name="arch" type="xml">
@@ -31,11 +41,11 @@
             </xpath>
 
             <xpath expr="//tree[1]/field[1]" position="before">
-                <field name="sequence" widget="handle"/>
+                <field name="sequence" widget="handle" />
             </xpath>
 
             <xpath expr="//tree[2]/field[1]" position="before">
-                <field name="sequence" widget="handle"/>
+                <field name="sequence" widget="handle" />
             </xpath>
 
         </field>

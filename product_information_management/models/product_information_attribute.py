@@ -24,9 +24,7 @@ class ProductInformationAttribute(models.Model):
         default="char",
         required=True,
     )
-    value_id = fields.Many2one(
-        "product.information.value", domain="[('attribute_type', '=', attribute_type)]"
-    )
+    value_id = fields.Many2one("product.information.value", domain="[('attribute_type', '=', attribute_type)]")
 
     @api.onchange("attribute_type")
     def _onchange_attribute_type(self):
@@ -62,12 +60,8 @@ class ProductInformationValue(models.Model):
     _description = "Product Information Value"
     _order = "name"
 
-    name = fields.Char(
-        "Value", compute="_compute_get_name", inverse="_inverse_set_name", store=True
-    )
-    attribute_ids = fields.One2many(
-        "product.information.attribute", "value_id", required=True
-    )
+    name = fields.Char("Value", compute="_compute_get_name", inverse="_inverse_set_name", store=True)
+    attribute_ids = fields.One2many("product.information.attribute", "value_id", required=True)
     attribute_type = fields.Char(required=True)
 
     char_value = fields.Char(readonly=True)
@@ -99,9 +93,7 @@ class ProductInformationValue(models.Model):
     @api.depends("name")
     def _inverse_set_name(self):
         for value in self:
-            attribute_type = (
-                value.attribute_type
-            )  # self._context['default_attribute_type']
+            attribute_type = value.attribute_type  # self._context['default_attribute_type']
             if attribute_type == "char":
                 value.write({"char_value": self.name})
             if attribute_type == "text":

@@ -4,7 +4,7 @@
         Product material attributes.
     """,
     "author": "Mint System GmbH",
-    "website": "https://www.mint-system.ch",
+    "website": "https://www.mint-system.ch/",
     "category": "Productivity",
     "version": "16.0.1.0.1",
     "license": "AGPL-3",

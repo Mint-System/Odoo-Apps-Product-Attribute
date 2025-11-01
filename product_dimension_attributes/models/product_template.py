@@ -25,4 +25,4 @@ class ProductDimension(models.Model):
         dimensions = self.search([("name", "=", name), ("value", "=", value)])
         if dimensions:
             return dimensions[0]
-        return super(ProductDimension, self).create(vals)
+        return super().create(vals)

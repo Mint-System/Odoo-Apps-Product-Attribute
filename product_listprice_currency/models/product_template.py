@@ -4,12 +4,8 @@ from odoo import fields, models
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    list_price_eur = fields.Float(
-        "Sales Price EUR", default=1.0, digits="Product Price"
-    )
-    list_price_usd = fields.Float(
-        "Sales Price USD", default=1.0, digits="Product Price"
-    )
+    list_price_eur = fields.Float("Sales Price EUR", default=1.0, digits="Product Price")
+    list_price_usd = fields.Float("Sales Price USD", default=1.0, digits="Product Price")
 
 
 class PricelistItem(models.Model):
