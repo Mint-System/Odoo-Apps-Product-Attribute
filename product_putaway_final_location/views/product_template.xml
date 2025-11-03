@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <record id="product_putaway_final_location.product_template_only_form_view" model="ir.ui.view">
+        <field name="name">product.template.form.putaway.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <field name="default_code" position="after">
+                <field name="putaway_final_location_id" readonly="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_putaway_final_location.product_template_common_form" model="ir.ui.view">
+        <field name="name">product.template.common.form.putaway.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='inventory']/group" position="inside">
+                <group name="group_putaway_final_location" string="Putaway location">
+                    <label for="putaway_final_location_id"/>
+                    <div class="o_row" name="putaway_final_location_id" >
+                        <field name="putaway_final_location_id"
+                               class="oe_inline"
+                               readonly="1"/>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
