@@ -9,7 +9,7 @@
         <field name="inherit_id" ref="product.product_template_only_form_view" />
         <field name="arch" type="xml">
             <field name="default_code" position="after">
-                <field name="putaway_final_location_id" readonly="1" />
+                <field name="putaway_final_locations_string" readonly="1" />
             </field>
         </field>
     </record>
@@ -23,11 +23,12 @@
         <field name="inherit_id" ref="product.product_template_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//page[@name='inventory']/group" position="inside">
-                <group name="group_putaway_final_location" string="Putaway location">
-                    <label for="putaway_final_location_id" />
-                    <div class="o_row" name="putaway_final_location_id">
+                <group name="group_putaway_final_location" string="Putaway Rules Locations">
+                    <label for="putaway_final_locations_string" />
+                    <div class="o_row" name="putaway_final_locations_string">
                         <field
-                            name="putaway_final_location_id"
+                            string="Locations"
+                            name="putaway_final_locations_string"
                             class="oe_inline"
                             readonly="1"
                         />

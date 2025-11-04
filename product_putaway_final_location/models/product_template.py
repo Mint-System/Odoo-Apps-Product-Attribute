@@ -11,3 +11,9 @@ class ProductTemplate(models.Model):
         store=False,
         readonly=True,
     )
+
+    putaway_final_locations_string = fields.Char(
+        string="Putaway Rules Locations",
+        related="product_variant_ids.putaway_final_locations_string",
+        readonly=True
+    )
