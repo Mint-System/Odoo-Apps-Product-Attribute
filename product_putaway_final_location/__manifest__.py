@@ -10,9 +10,7 @@
     "version": "17.0.1.0.0",
     "license": "AGPL-3",
     "depends": ["base", "stock", "product"],
-    "data": [
-      "views/product_template.xml"
-    ],
+    "data": ["views/product_template.xml"],
     "installable": True,
     "application": False,
     "auto_install": False,
