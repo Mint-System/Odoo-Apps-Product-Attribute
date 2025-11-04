@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-04 12:24+0000\n"
-"PO-Revision-Date: 2025-11-04 12:24+0000\n"
+"POT-Creation-Date: 2025-11-04 13:01+0000\n"
+"PO-Revision-Date: 2025-11-04 13:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,8 @@ msgstr ""
 
 #. module: product_putaway_final_location
 #: model:ir.model.fields,field_description:product_putaway_final_location.field_product_product__putaway_final_location_id
-msgid "Final Locations"
+#: model:ir.model.fields,field_description:product_putaway_final_location.field_product_template__putaway_final_location_id
+msgid "Final Putaway Location"
 msgstr "Einlagerungsregeln"
 
 #. module: product_putaway_final_location
@@ -31,6 +32,13 @@ msgid "Product Variant"
 msgstr "Produktvariante"
 
 #. module: product_putaway_final_location
+#: model:ir.model.fields,field_description:product_putaway_final_location.field_product_product__putaway_final_locations_string
+#: model:ir.model.fields,field_description:product_putaway_final_location.field_product_template__putaway_final_locations_string
+msgid "Putaway Rules Locations"
+msgstr "Einlagerungsregeln Lagerorte"
+
+
+#. module: product_putaway_final_location
 #: model_terms:ir.ui.view,arch_db:product_putaway_final_location.product_template_common_form
 msgid "Putaway location"
-msgstr ""
+msgstr "Einlagerungsort"
