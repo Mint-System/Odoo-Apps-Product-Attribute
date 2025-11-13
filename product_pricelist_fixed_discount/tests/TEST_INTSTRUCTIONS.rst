@@ -1,0 +1,6 @@
+- Enable "Discouns" settings option
+- Open pricelist default
+- Add fixed price 100 with 20%
+- Create a sale order
+- Add any product
+- Ensure price is 100 and discount is 20%

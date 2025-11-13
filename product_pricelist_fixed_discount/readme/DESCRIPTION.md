@@ -1,0 +1,1 @@
+Setup pricelist with fixed price and discount.
