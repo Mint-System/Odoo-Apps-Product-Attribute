@@ -8,7 +8,7 @@ class ProductProduct(models.Model):
         "stock.location",
         string="Final Putaway Location",
         compute="_compute_putaway_final_location",
-        store=False,
+        store=True,
     )
 
     putaway_final_locations_string = fields.Char(
@@ -44,6 +44,7 @@ class ProductProduct(models.Model):
             if not rules:
                 product.putaway_final_locations_string = ""
                 continue
+
 
             if len(rules) == 1:
                 product.putaway_final_locations_string = rules[0].location_out_id.display_name if rules[0].location_out_id else "?"

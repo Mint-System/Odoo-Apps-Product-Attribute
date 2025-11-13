@@ -1,0 +1,2 @@
+- Create a Putaway Rule for an arbitrary product.
+- Check if final location of the rule is shown on products (tabs *General Information* and *Inventory*).
