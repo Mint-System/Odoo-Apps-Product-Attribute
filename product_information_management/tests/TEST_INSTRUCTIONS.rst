@@ -1,0 +1,9 @@
+- Open "Sales > Configuraiton > Product Informations"
+- Create a new key "Version"
+- Add a value "18.0"
+- Add another entry with the same key but value "19.0"
+- Open product "Customizable Desk"
+- In Tab "Product Informations" add version 18.0
+- Open product variant "Customizable Desk" with color black
+- Add version 19.0 and remove 18.0
+- Ensure this value is only changed on this product variant.

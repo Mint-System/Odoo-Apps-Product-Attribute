@@ -12,7 +12,7 @@ class ProductTemplate(models.Model):
         "product.information.attribute",
         string="Product Information",
         compute="_compute_attribute_ids",
-        inverse="_set_attribute_ids",
+        inverse="_inverse_attribute_ids",
         store=True,
     )
 
@@ -24,7 +24,7 @@ class ProductTemplate(models.Model):
         for template in self - unique_variants:
             template.attribute_ids = []
 
-    def _set_attribute_ids(self):
+    def _inverse_attribute_ids(self):
         for template in self:
             if len(template.product_variant_ids) == 1:
                 template.product_variant_ids.attribute_ids = template.attribute_ids
