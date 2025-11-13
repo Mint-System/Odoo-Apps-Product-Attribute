@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <record id="product_information_attribute_tree" model="ir.ui.view">
+    <field
+      name="name"
+    >product_information_management.product_information_attribute_tree</field>
+    <field name="model">product.information.attribute</field>
+    <field name="arch" type="xml">
+      <list editable="bottom">
+        <field name="key_id" />
+        <field name="attribute_type" />
+        <field name="value_id" context="{'default_attribute_type': attribute_type}" />
+      </list>
+    </field>
+  </record>
+
+  <record id="product_information_attribute_form" model="ir.ui.view">
+    <field
+      name="name"
+    >product_information_management.product_information_attribute_form</field>
+    <field name="model">product.information.attribute</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="key_id" />
+            <field name="attribute_type" />
+            <field
+              name="value_id"
+              context="{'default_attribute_type': attribute_type}"
+            />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="product_information_value_form" model="ir.ui.view">
+    <field
+      name="name"
+    >product_information_management.product_information_value_form</field>
+    <field name="model">product.information.value</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="attribute_type" readonly="1" />
+            <field name="char_value" />
+            <field name="text_value" />
+            <field name="integer_value" />
+            <field name="float_value" />
+            <field name="boolean_value" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="product_information_attribute_search" model="ir.ui.view">
+    <field
+      name="name"
+    >product_information_management.product_information_attribute_search</field>
+    <field name="model">product.information.attribute</field>
+    <field name="arch" type="xml">
+      <search string="Search Product Informations">
+        <field
+          name="key_id"
+          string="Key and Value"
+          filter_domain="['|',('key_id', 'ilike', self),('value_id', 'ilike', self)]"
+        />
+        <field name="value_id" />
+        <group expand="0" string="Group By">
+          <filter string="Key" name="key_id" context="{'group_by': 'key_id'}" />
+        </group>
+      </search>
+    </field>
+  </record>
+
+  <record id="action_product_information_attribute_tree" model="ir.actions.act_window">
+    <field name="name">Product Informations</field>
+    <field name="res_model">product.information.attribute</field>
+    <field name="binding_view_types">list</field>
+    <field name="view_mode">list</field>
+    <field name="view_id" ref="product_information_attribute_tree" />
+  </record>
+
+  <menuitem
+    id="menu_product_information_attribute"
+    name="Product Informations"
+    parent="sale.prod_config_main"
+    action="action_product_information_attribute_tree"
+    sequence="15"
+  />
+</odoo>

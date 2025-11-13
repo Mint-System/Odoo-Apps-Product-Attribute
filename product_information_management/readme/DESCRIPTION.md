@@ -1,0 +1,1 @@
+A simple key value model to store product informations.
