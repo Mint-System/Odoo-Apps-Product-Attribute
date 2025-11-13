@@ -8,7 +8,7 @@ class ProductTemplate(models.Model):
         "stock.location",
         string="Final Putaway Location",
         related="product_variant_ids.putaway_final_location_id",
-        store=False,
+        store=True,
         readonly=True,
     )
 
