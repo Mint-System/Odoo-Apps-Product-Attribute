@@ -13,5 +13,5 @@ git clone git@github.com:Mint-System/Odoo-Apps-Product-Attribute.git ./addons/pr
 ## Available modules
 
 | Module | Summary |
-| ------ | ------- |
-|        |         |
+| --- | --- |
+| [product_type_description](product_type_description) |         Add field type description to product. |

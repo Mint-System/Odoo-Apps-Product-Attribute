@@ -1,0 +1,11 @@
+[project]
+name = "odoo-apps-product-attribute"
+version = "19.0.20260225.0"
+dependencies = [
+    "odoo-addon-product_type_description==19.0.*",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 19.0",
+]

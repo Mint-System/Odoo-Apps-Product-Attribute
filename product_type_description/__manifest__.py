@@ -4,7 +4,7 @@
         Add field type description to product.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
-    "website": "https://www.mint-system.ch",
+    "website": "https://www.mint-system.ch/",
     "category": "Manufacturing",
     "version": "19.0.1.0.0",
     "license": "AGPL-3",
