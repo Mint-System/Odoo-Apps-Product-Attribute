@@ -1,0 +1,3 @@
+- Open the form view of a product
+- Show tab attributes and variants
+- Add a material entry

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+product_dimension_attributes.access_product_dimension_attributes,access_product_dimension_attributes,product_dimension_attributes.model_product_dimension,base.group_user,1,1,1,1
+product_dimension_attributes.access_product_dimension_attributes_public,access_product_dimension_attributes_public,product_dimension_attributes.model_product_dimension,,1,0,0,0
