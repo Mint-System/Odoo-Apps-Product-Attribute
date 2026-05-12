@@ -1,0 +1,2 @@
+- Edit a product category.
+- Set tracking type.

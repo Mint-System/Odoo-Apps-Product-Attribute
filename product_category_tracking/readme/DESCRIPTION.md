@@ -1,0 +1,1 @@
+Allows to define a tracking type on product categories.
